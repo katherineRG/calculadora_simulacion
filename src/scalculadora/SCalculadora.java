@@ -1,5 +1,6 @@
 
 package scalculadora;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class SCalculadora {
@@ -10,7 +11,7 @@ public class SCalculadora {
         double num1, num2;
         int opc;
         int salir = 0;
-  
+        try {    
         do {
 
                 System.out.println("=========MENU==========");
@@ -121,6 +122,12 @@ public class SCalculadora {
                 }
             } while (opc != 7 || salir == 2);
         
+            } catch (InputMismatchException e) {
+                System.out.println("ERROR: Ingrese un valor numerico porfavor");
+
+            } finally {
                 System.out.println("Hasta Luego");
             }
         }
+    }
+
